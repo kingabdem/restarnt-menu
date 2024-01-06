@@ -1,8 +1,7 @@
-
-
 .carteFood{
     margin: auto;
     max-width: 1300px;
+    padding: 1.5rem;
 }
 
 .imgItems{
@@ -13,5 +12,29 @@
 .carteFoodBody {
     display: grid;
     grid-template-columns: .2fr 2fr; 
+}
+
+@media (max-width:1360px) {
+    .carteFood{
+        margin: 3rem;
+    }
+}
+
+@media (max-width:948px) {
+    .carteFood{
+        margin: 2rem;
+    }
+    .carteFood{
+        padding: 1rem;
+    }
+}
+
+@media (max-width:600px) {
+    .carteFood{
+        margin: 1rem;
+    }
+    .carteFood{
+        padding: .5rem;
+    }
 }
 

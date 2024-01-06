@@ -5,7 +5,7 @@ export default function ItemsList() {
   return (
     <div>
       <Card className="carteFood d-flex flex-row my-4">
-        <Card.Body className="carteFoodBody p-5">
+        <Card.Body className="carteFoodBody">
           <div>
              <img className="imgItems" src="imageFood/hamburger.jpg" />
           </div>
