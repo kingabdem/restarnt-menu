@@ -8,7 +8,3 @@
 :root{
   --green: #1ABC9C;
 }
-
-.fa-pizza-slice{
-  color: var(--green);
-}

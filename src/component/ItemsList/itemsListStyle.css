@@ -1,0 +1,17 @@
+
+
+.carteFood{
+    margin: auto;
+    max-width: 1300px;
+}
+
+.imgItems{
+    width: 6rem;
+    height: 6rem;
+}
+
+.carteFoodBody {
+    display: grid;
+    grid-template-columns: .2fr 2fr; 
+}
+

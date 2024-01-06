@@ -1,0 +1,17 @@
+.AllButton{
+    text-align: center;
+}
+
+.btnFood{
+    padding: 5px;
+    width: 5rem;
+    font-weight: 500;
+    border: 1px solid #1ABC9C;
+    background: white;
+    transition: all .4s ease-in-out;
+}
+
+.btnFood:hover{
+    background: #1ABC9C;
+    color: white;
+}
