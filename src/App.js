@@ -8,21 +8,45 @@ import { useState } from "react";
 
 function App() {
   const [dataArray, setdataArray] = useState(Data);
+  // const [dataArraySearch, setdataArraySearch] = useState([]);
+
+  let categorie = ["All", ...new Set(Data.map((e) => e.category))];
+  // Fonction pour échanger les positions de deux éléments dans le tableau
+  function swapElements(array, index1, index2) {
+    var temp = array[index1];
+    array[index1] = array[index2];
+    array[index2] = temp;
+  }
+
+  swapElements(categorie, 1, 2);
+  swapElements(categorie, 2, 3);
+
+function searchTerm(term) {
+
+  setdataArray([]);
+
+  const filteredData = Data.filter((e) =>
+  e.title.toLowerCase().includes(term.toLowerCase())
+);
+
+setdataArray(filteredData);
+
+}
+
 
   function HandleText(text) {
-    if (text == "All") {
+    if (text.e == "All") {
       setdataArray(Data);
     } else {
-      setdataArray([]);
-      let NewArray = Data.filter((e) => e.category == text);
+      let NewArray = Data.filter((e) => e.category == text.e);
       setdataArray(NewArray);
     }
   }
   return (
     <div className="App">
-      <NavbarSite />
+      <NavbarSite searchTerm={searchTerm}  />
       <Header />
-      <ButtonHead HandleText={HandleText} />
+      <ButtonHead HandleText={HandleText} CategorieData={categorie} />
       <ItemsList dataList={dataArray} />
     </div>
   );

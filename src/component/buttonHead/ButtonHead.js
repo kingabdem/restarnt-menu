@@ -1,16 +1,16 @@
 import "./ButtonHeadStyle.css";
 
-export default function ButtonHead({HandleText}) {
+export default function ButtonHead({HandleText,CategorieData}) {
+
   function HandleClick(text){
     HandleText(text);
   }
   return (
     <div>
       <div className="AllButton my-5">
-        <button onClick={()=>{HandleClick("All")}} className="mx-2 btnFood">All</button>
-        <button onClick={()=>{HandleClick("Breakfast")}} className="mx-2 btnFood">Breakfast</button>
-        <button onClick={()=>{HandleClick("Lunch")}} className="mx-2 btnFood">Lunch</button>
-        <button onClick={()=>{HandleClick("Dinner")}} className="mx-2 btnFood">Dinner</button>
+        {CategorieData.map((e,i)=>(
+          <button key={i} onClick={()=>{HandleClick({e})}} className="mx-2 btnFood">{e}</button>
+        ))}
       </div>
     </div>
   );

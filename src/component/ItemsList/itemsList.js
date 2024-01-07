@@ -4,9 +4,9 @@ import "./itemsListStyle.css";
 export default function ItemsList({dataList}) {
   return (
     
-    <div>
+    <div className="mt-5 mb-5">
 
-      {dataList.length == 0 ? <h2 className="text-center">No data</h2> :
+      {dataList.length == 0 ? <h2 className="text-center mt-5">We don't have this food in our menu</h2> :
 
       dataList.map((e,i)=>(
         <Card key={i} className="carteFood d-flex flex-row my-4">
