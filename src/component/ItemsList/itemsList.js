@@ -1,23 +1,34 @@
 import { Card } from "react-bootstrap";
 import "./itemsListStyle.css";
 
-export default function ItemsList() {
+export default function ItemsList({dataList}) {
   return (
+    
     <div>
-      <Card className="carteFood d-flex flex-row my-4">
-        <Card.Body className="carteFoodBody">
-          <div>
-             <img className="imgItems" src="imageFood/hamburger.jpg" />
-          </div>
-          <div className="w-100 mt-2">
-            <Card.Title className="titre-carte">Hamburger</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-          </div>
-        </Card.Body>
-      </Card>
+
+      {dataList.length == 0 ? <h2 className="text-center">No data</h2> :
+
+      dataList.map((e,i)=>(
+        <Card key={i} className="carteFood d-flex flex-row my-4">
+              <Card.Body className="carteFoodBody">
+                <div>
+                   <img className="imgItems" src={e.image} />
+                </div>
+                <div className="w-100 mt-2">
+                  <div className="d-flex justify-content-between">
+                     <Card.Title className="titre-carte">{e.title}</Card.Title>
+                     <span className="price">{e.price} $</span>
+                  </div>
+                  <Card.Text className="d-grid">
+                    {e.description}
+                    <span className="my-2 fs-5 fw-bold">Country : {e.food}</span>
+                  </Card.Text>
+                </div>
+              </Card.Body>
+            </Card>
+      ))
+      }
+
     </div>
   );
 }
